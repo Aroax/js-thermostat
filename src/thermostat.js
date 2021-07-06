@@ -2,14 +2,14 @@
 
 class Thermostat {
   constructor(defaultTemp = 20) {
-    this._default = defaultTemp;
-    this._temp = this._default;
-    this._tempMinimum = 10;
-    this._tempMaximum = 32;
+    this._DEFAULT_TEMP = defaultTemp;
+    this._temp = this._DEFAULT_TEMP;
+    this._TEMP_MINIMUM = 10;
+    this._TEMP_MAXIMUM = 32;
     this._powerSaving = true;
-    this._powerSavingTemp = 25;
-    this._lowEnergyBoundary = 18;
-    this._mediumEnergyBoundary = 25;
+    this._POWER_SAVING_TEMP = 25;
+    this._LOW_ENERGY_BOUNDARY = 18;
+    this._MEDIUM_ENERGY_BOUNDARY = 25;
   };
 
   tempDisplay() {
@@ -23,7 +23,7 @@ class Thermostat {
   };
 
   tempDown(decrement = 1) {
-    if ((this._temp - decrement) >= this._tempMinimum) {
+    if ((this._temp - decrement) >= this._TEMP_MINIMUM) {
       this._temp -= decrement;
     };
   };
@@ -40,7 +40,7 @@ class Thermostat {
     this._powerSaving = false;
   };
 
-  resetTemp(degrees = this._default) {
+  resetTemp(degrees = this._DEFAULT_TEMP) {
     this._temp = degrees;
   };
 
@@ -56,18 +56,18 @@ class Thermostat {
 
   _checkMaxTemp() {
     if (this.isPowerSaving) {
-      return this._powerSavingTemp;
+      return this._POWER_SAVING_TEMP;
     } else {
-      return this._tempMaximum;
+      return this._TEMP_MAXIMUM;
     }
   };
 
   _isLowEnergy() {
-    return (this._temp < this._lowEnergyBoundary)
+    return (this._temp < this._LOW_ENERGY_BOUNDARY)
   };
 
   _isMediumEnergy() {
-    return (this._lowEnergyBoundary < this._temp && this._temp <= this._mediumEnergyBoundary)
+    return (this._LOW_ENERGY_BOUNDARY < this._temp && this._temp <= this._MEDIUM_ENERGY_BOUNDARY)
   };
 
 };
