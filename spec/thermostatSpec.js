@@ -57,6 +57,19 @@ describe('Thermostat', () => {
     expect(thermostat.tempDisplay()).toEqual(20);
   });
 
+  it('returns high energy over 25', () => {
+    thermostat.resetTemp(32);
+    expect(thermostat.energyUsage()).toEqual('high-usage')
+  });
 
+  it('returns medium energy between 18 and 25', () => {
+    thermostat.resetTemp(21);
+    expect(thermostat.energyUsage()).toEqual('medium-usage')
+  });
+
+  it('returns low energy under 18', () => {
+    thermostat.resetTemp(15);
+    expect(thermostat.energyUsage()).toEqual('low-usage')
+  });
 
 });

@@ -8,6 +8,8 @@ class Thermostat {
     this._tempMaximum = 32;
     this._powerSaving = true;
     this._powerSavingTemp = 25;
+    this._lowEnergyBoundary = 18;
+    this._mediumEnergyBoundary = 25;
   };
 
   tempDisplay() {
@@ -42,12 +44,30 @@ class Thermostat {
     this._temp = degrees;
   };
 
+  energyUsage() {
+    if (this._isLowEnergy()) {
+      return 'low-usage';
+    } else if (this._isMediumEnergy()) {
+      return 'medium-usage';
+    } else {
+      return 'high-usage';
+    };
+  };
+
   _checkMaxTemp() {
     if (this.isPowerSaving) {
       return this._powerSavingTemp;
     } else {
       return this._tempMaximum;
     }
+  };
+
+  _isLowEnergy() {
+    return (this._temp < this._lowEnergyBoundary)
+  };
+
+  _isMediumEnergy() {
+    return (this._lowEnergyBoundary < this._temp && this._temp <= this._mediumEnergyBoundary)
   };
 
 };
