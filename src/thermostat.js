@@ -8,4 +8,8 @@ class Thermostat {
   tempDisplay() {
     return this._temp;
   };
+
+  increaseTemp(increment = 1) {
+    this._temp += increment;
+  }
 };
