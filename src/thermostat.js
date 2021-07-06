@@ -2,7 +2,8 @@
 
 class Thermostat {
   constructor(defaultTemp = 20) {
-    this._temp = defaultTemp;
+    this._default = defaultTemp;
+    this._temp = this._default;
     this._tempMinimum = 10;
     this._tempMaximum = 32;
     this._powerSaving = true;
@@ -37,7 +38,7 @@ class Thermostat {
     this._powerSaving = false;
   };
 
-  setTemp(degrees = defaultTemp) {
+  resetTemp(degrees = this._default) {
     this._temp = degrees;
   };
 
