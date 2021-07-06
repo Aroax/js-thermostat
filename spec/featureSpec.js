@@ -14,4 +14,8 @@ describe('Feature Test:', () => {
   // it('temperature can be increased', () => {
   //
   // });
+
+  // it('has a power saving mode', () => {
+  //   expect(thermostat)
+  // });
 });

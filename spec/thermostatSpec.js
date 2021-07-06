@@ -26,4 +26,18 @@ describe('Thermostat', () => {
     thermostat.tempDown();
     expect(thermostat.tempDisplay()).toEqual(10);
   });
+
+  it('can switch on a power saving mode', () => {
+    expect(thermostat.isPowerSaving()).toEqual(false);
+    thermostat.powerSavingOn();
+    expect(thermostat.isPowerSaving()).toEqual(true);
+  });
+
+  it('has a max temp of 25 when power saving is on', () => {
+    thermostat.powerSavingOn();
+    expect(thermostat.isPowerSaving()).toEqual(true);
+    thermostat.setTemp(25);
+    thermostat.tempUp();
+    expect(thermostat.tempDisplay()).toEqual(25);
+  });
 });
