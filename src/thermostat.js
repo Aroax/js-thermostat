@@ -55,7 +55,7 @@ class Thermostat {
   };
 
   _checkMaxTemp() {
-    if (this.isPowerSaving) {
+    if (this.isPowerSaving()) {
       return this._POWER_SAVING_TEMP;
     } else {
       return this._TEMP_MAXIMUM;
@@ -67,7 +67,7 @@ class Thermostat {
   };
 
   _isMediumEnergy() {
-    return (this._LOW_ENERGY_BOUNDARY < this._temp && this._temp <= this._MEDIUM_ENERGY_BOUNDARY)
+    return (this._LOW_ENERGY_BOUNDARY <= this._temp && this._temp <= this._MEDIUM_ENERGY_BOUNDARY)
   };
 
 };
