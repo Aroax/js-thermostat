@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Javascript Thermostat</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="" id="thermostat-outer-box">
+          <div class="bg-light" id="thermostat-inner-box" >
+            <br>
+            <br>
+            <div class="row" id="top-row">
+              <div class="col text-center">
+                <h1>Thermostat</h1>
+              </div>
+              <div class="col">
+                <div class="" id="temp-display">
+                  <p>Current Temperature Set:</p>
+                  <h2 id="temp">current_temp</h2>
+                </div>
+              </div>
+
+            </div>
+            <div class="row" id="top-row">
+              <div class="col text-center" id="top-left">
+                <p>
+                  <button id="temp-up">+</button>
+                  <button id="temp-down">-</button>
+                  <button id="temp-reset">reset</button>
+                </p>
+              </div>
+              <div class ="col" id="top-right">
+
+              </div>
+            </div>
+            <div class="row" id="bottom-row">
+              <div class="col" id="bottom-left">
+
+
+              </div>
+              <div class="col" id="bottom-right">
+                <div class="" id="power-section">
+                  <p>
+                    power saving mode is <span id="power-saving-status">on</span>
+                  </p>
+                  <p>
+                    <button id="powersaving-on">PSM on</button>
+                    <button id="powersaving-off">PSM off</button>
+                  </p>
+                </div>
+
+              </div>
+          </div>
+        </div>
+
+      </div>
+  <script src="src/thermostat.js"></script>
+  <script src="src/interface.js"></script>
+  </body>
+</html>
