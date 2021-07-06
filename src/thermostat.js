@@ -5,7 +5,7 @@ class Thermostat {
     this._temp = defaultTemp;
     this._tempMinimum = 10;
     this._tempMaximum = 32;
-    this._powerSaving = false;
+    this._powerSaving = true;
     this._powerSavingTemp = 25;
   };
 
@@ -31,6 +31,10 @@ class Thermostat {
 
   powerSavingOn() {
     this._powerSaving = true;
+  };
+
+  powerSavingOff() {
+    this._powerSaving = false;
   };
 
   setTemp(degrees = defaultTemp) {
