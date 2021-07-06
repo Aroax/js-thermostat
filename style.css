@@ -1,3 +1,50 @@
+:root {
+  --primary-color: #4458dc;
+  --primary-color2: #854fee;
+  --title-color: #141313;
+  --text-color: #777777;
+  --border-color: #201f1f17;
+  --gradient-color: linear-gradient(180deg, #4458dc 0%, #854fee 100%);
+  --shadow-color: 0px 10px 30px rgba(118, 85, 225, 0.3);
+  --box-shadow: 0px 10px 40px rgba(63, 63, 63, 0.205);
+  --white-color: rgb(255, 255, 255);
+  --font-fam: "Tahoma", sans-serif;
+  --letter-spacing: 0.1em;
+  --border-rd: 5px;
+}
+
+.btn-primary {
+  background: var(--gradient-color);
+  color: whitesmoke;
+  border: 2px solid var(--primary-color);
+}
+
+.btn-default {
+  border: 2px solid var(--primary-color);
+}
+
+.btn-default:hover,
+.btn-primary:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.btn-default:hover {
+  background-color: var(--white-color);
+}
+
+.btn:hover {
+  transform: scale(0.95);
+  opacity: 1;
+  filter: opacity(1);
+}
+
+button:focus,
+button:active button:hover .btn:active,
+.btn.active {
+  outline: 0px !important;
+  box-shadow: none !important;
+}
+
 .low-usage {
   color: green;
 }
@@ -9,3 +56,39 @@
 .high-usage {
   color: red;
 }
+
+.thermostat {
+  /* background: var(--gradient-color); */
+  background: linear-gradient(to right, #6782ab, #3498db);
+  box-shadow: 3px 14px 80px rgba(34, 35, 58, 0.8);
+  border-radius: 25px;
+  /* box-shadow: 5px 10px; */
+  opacity: 1;
+  /* padding: 25px;
+  border-radius: 25px; */
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+* {
+  box-sizing: border-box;
+}
+body {
+background-color: #ffffff;
+/* background-image: linear-gradient(147deg, #FFE53B 0%, #fd3838 74%); */
+/* min-height: 100vh; */
+/* font-family: 'Fira Sans', sans-serif;
+  display: flex;
+} */
+
+/* .blog-slider {
+    width: 95%;
+  position: relative;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 25px;
+    border-radius: 25px;
+    height: 400px;
+  transition: all .3s;
+} */
