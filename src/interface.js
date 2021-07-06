@@ -5,43 +5,48 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#temp').className = thermostat.energyUsage();
   };
 
+  var city = ('London');
+
   const thermostat = new Thermostat();
 
   // document.querySelector('#temp').innerText = thermostat.tempDisplay();
   updateTemp();
 
-
   document.querySelector('#temp-up').addEventListener('click', () => {
     thermostat.tempUp();
-    // document.querySelector('#temp').innerText = thermostat.tempDisplay();
     updateTemp();
   });
 
   document.querySelector('#temp-down').addEventListener('click', () => {
     thermostat.tempDown();
-    // document.querySelector('#temp').innerText = thermostat.tempDisplay();
     updateTemp();
   });
 
   document.querySelector('#temp-reset').addEventListener('click', () => {
     thermostat.resetTemp();
-    // document.querySelector('#temp').innerText = thermostat.tempDisplay();
     updateTemp();
   });
 
   document.querySelector('#powersaving-on').addEventListener('click', () => {
     thermostat.powerSavingOn();
     document.querySelector('#power-saving-status').innerText = 'on';
-    // document.querySelector('#temp').innerText = thermostat.tempDisplay();
     updateTemp();
   });
 
   document.querySelector('#powersaving-off').addEventListener('click', () => {
     thermostat.powerSavingOff();
     document.querySelector('#power-saving-status').innerText = 'off';
-    // document.querySelector('#temp').innerText = thermostat.tempDisplay();
     updateTemp();
   });
 
+  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=0782e7ae39962cba960b3765a6fa5a6f&units=metric`)
+  .then((response) => {
+    return response.json()
+  })
+  .then((data) => {
+    document.querySelector('#current-temperature').innerText = data.main.temp;
+  });
+
+  document.querySelector('#current-city').innerText = city;
 
 })
